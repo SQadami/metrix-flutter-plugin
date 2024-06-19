@@ -1,0 +1,58 @@
+group 'ir.metrix.flutter'
+version '1.4.0'
+
+def Properties gradleProperties = new Properties()
+gradleProperties.load(rootProject.rootProject.file("gradle.properties").newDataInputStream())
+
+project.ext {
+    notificationEnabled = gradleProperties.getProperty("metrix.notitifcation.enable", "false").toBoolean()
+}
+
+buildscript {
+    ext.kotlin_version = '1.5.31'
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.3'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 32
+
+    defaultConfig {
+        minSdkVersion 16
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    implementation 'ir.metrix.analytics:metrix-flutter:2.1.2'
+    implementation 'ir.metrix.attribution:metrix-flutter:2.1.2'
+    if (project.ext.notificationEnabled) {
+        api 'ir.metrix.notification:metrix-reactnative:2.1.2'
+    }
+}

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "227591734119",
+    "firebase_url": "https://metrix-server.firebaseio.com",
+    "project_id": "metrix-server",
+    "storage_bucket": "metrix-server.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:227591734119:android:94f9cb995ef9fc3f48a5c2",
+        "android_client_info": {
+          "package_name": "ir.metrix.flutter.example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "227591734119-qa8ipm4p6no418gpb0flrhecdep54kej.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBz7EB_BfwzBd5FQqGKr7t4xvkN81ZGRYo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "227591734119-d9bhg8q81okj7d0d8r37totrk0idi49d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
